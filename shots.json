@@ -1,0 +1,6 @@
+[
+  { "name": "1-cover.png", "query": "?shot=cover" },
+  { "name": "2-title.png", "query": "?shot=title" },
+  { "name": "3-round2.png", "query": "?shot=round2" },
+  { "name": "4-clear.png", "query": "?shot=clear" }
+]

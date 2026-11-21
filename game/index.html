@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twin Peek — Spot the Difference</title>
+  <style>
+    :root { color-scheme: light; font-family: "Trebuchet MS", "Arial Rounded MT Bold", system-ui, sans-serif; color: #264653; background: #f7ead9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; padding: 24px; background: #f7ead9; }
+    main { width: min(100%, 1240px); margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 20px; border-radius: 20px; background: #fffaf2; box-shadow: 0 5px 18px #6b51431a; }
+    h1 { margin: 0; font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 900; letter-spacing: -.04em; }
+    .hud { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 9px; }
+    .chip { padding: 8px 13px; border-radius: 999px; background: #fffaf2; box-shadow: 0 3px 12px #6b51431a; font-size: .9rem; font-weight: 800; white-space: nowrap; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+    button { border: 0; border-radius: 999px; padding: 10px 16px; color: #fffaf2; background: #264653; font: inherit; font-weight: 800; cursor: pointer; }
+    button:hover { background: #367080; }
+    button:focus-visible { outline: 3px solid #e9c46a; outline-offset: 3px; }
+    .stage { width: 100%; overflow-x: auto; border-radius: 20px; background: #fffaf2; box-shadow: 0 8px 28px #6b514322; text-align: center; }
+    canvas { display: block; margin: 0 auto; width: 1180px; height: 470px; max-width: none; }
+    footer { text-align: center; color: #6d6257; font-size: .92rem; }
+    @media (max-width: 700px) { body { padding: 14px; } header { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>Twin Peek — Spot the Difference</h1><div class="actions"><button id="btn-hint" type="button">Hint</button><button id="btn-restart" type="button">Restart</button><button id="btn-sound" type="button">Sound: on</button></div></header>
+    <section class="hud" aria-label="Game stats">
+      <span class="chip" id="hud-left">Differences: 0</span><span class="chip" id="hud-round">Round: 1</span><span class="chip" id="hud-score">Score: 0</span><span class="chip" id="hud-time">Time: 0:00</span><span class="chip" id="hud-mistakes">Mistakes: 0</span>
+    </section>
+    <div class="stage"><canvas id="stage" width="1180" height="470" aria-label="Two seaside café terrace pictures. Find the differences by clicking either picture."></canvas></div>
+    <footer>Click a difference in either picture · H hint · R restart · M sound</footer>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
